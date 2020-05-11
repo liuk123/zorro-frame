@@ -4,7 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
-    // { path: '', redirectTo: 'homepage', pathMatch: 'full'},
+    { path: '', redirectTo: 'homepage', pathMatch: 'full'},
     {
         path:'homepage',
         component: HomepageComponent,

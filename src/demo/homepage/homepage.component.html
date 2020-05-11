@@ -1,2 +1,4 @@
-<p>homepage works!</p>
-<button nz-button nzType="primary">Primary</button>
+<p>{{title}}</p>
+<button nz-button [nzType]="'primary'" (click)="createBasicMessage()">Display normal message</button>
+
+<i nz-icon [nzType]="'home'"></i>
