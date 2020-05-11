@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MaterialModule } from './material.module';
+import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
 //module
 const THIRD_MODULES = [
-  MaterialModule
+  ...SHARED_ZORRO_MODULES
 ]
 //component
 const COMPONENTS = [

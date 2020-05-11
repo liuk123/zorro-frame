@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { config } from 'rxjs';
+import { objectUtil } from 'prime-jsutils'
 
 @Component({
   selector: 'app-homepage',
@@ -14,6 +15,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.config.url)
+    console.log(objectUtil.clone(123))
   }
 
 }
