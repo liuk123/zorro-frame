@@ -1,6 +1,6 @@
 html, body, app-root, .site {
     width:100%;
-    min-height: calc(100vh + 0px)
+    min-height: calc(100vh + 64px);
 }
 .site{
     display: flex;
@@ -17,8 +17,10 @@ html, body, app-root, .site {
         .sidebar{
             width:15rem;
             background-color: #ddd;
+            overflow-y: auto;
+            overflow-x: auto;
         }
-        .container{
+        .m-container{
             flex: 1 1 auto;
             overflow-y: auto;
             padding: 1rem;
