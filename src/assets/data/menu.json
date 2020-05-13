@@ -1,9 +1,11 @@
 {
-  "menu": [{
+  "menu": [
+    {
       "state": "homepage",
       "name": "homepage",
       "type": "link",
-      "icon": "dashboard",
+      "open": true,
+      "icon": "bars",
       "badge": {
         "color": "red-500",
         "value": "5"
@@ -13,7 +15,7 @@
       "state": "forms",
       "name": "forms",
       "type": "link",
-      "icon": "dashboard",
+      "icon": "bars",
       "badge": {
         "color": "red-500",
         "value": "5"
@@ -23,12 +25,14 @@
       "state": "material",
       "name": "Material",
       "type": "sub",
-      "icon": "favorite",
-      "children": [{
+      "icon": "bars",
+      "children": [
+        {
           "state": "",
           "name": "Form Controls",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "autocomplete",
               "name": "Autocomplete",
               "type": "link"
@@ -79,7 +83,8 @@
           "state": "",
           "name": "Navigation",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "menu",
               "name": "Menu",
               "type": "link"
@@ -100,7 +105,8 @@
           "state": "",
           "name": "Layout",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "card",
               "name": "Card",
               "type": "link"
@@ -146,7 +152,8 @@
           "state": "",
           "name": "Buttons & Indicators",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "button",
               "name": "Button",
               "type": "link"
@@ -192,7 +199,8 @@
           "state": "",
           "name": "Popups & Modals",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "bottom-sheet",
               "name": "Bottom Sheet",
               "type": "link"
@@ -218,7 +226,8 @@
           "state": "",
           "name": "Data Table",
           "type": "sub",
-          "children": [{
+          "children": [
+            {
               "state": "paginator",
               "name": "Paginator",
               "type": "link"
@@ -241,72 +250,84 @@
       "state": "gallery",
       "name": "Gallery",
       "type": "sub",
-      "icon": "image",
+      "icon": "bars",
       "label": {
         "color": "indigo-500",
         "value": "new"
       },
-      "children": [{
-        "state": "media",
-        "name": "Media",
-        "type": "link"
-      }]
+      "children": [
+        {
+          "state": "media",
+          "name": "Media",
+          "type": "link"
+        }
+      ]
     },
     {
       "state": "forms1",
       "name": "Forms",
       "type": "sub",
-      "icon": "description",
-      "children": [{
-        "state": "elements",
-        "name": "Form Elements",
-        "type": "link"
-      }, {
-        "state": "ng-select",
-        "name": "Ng Select",
-        "type": "link"
-      }, {
-        "state": "dynamic",
-        "name": "Dynamic Form",
-        "type": "link"
-      }]
+      "icon": "bars",
+      "children": [
+        {
+          "state": "elements",
+          "name": "Form Elements",
+          "type": "link"
+        },
+        {
+          "state": "ng-select",
+          "name": "Ng Select",
+          "type": "link"
+        },
+        {
+          "state": "dynamic",
+          "name": "Dynamic Form",
+          "type": "link"
+        }
+      ]
     },
     {
       "state": "tables",
       "name": "Tables",
       "type": "sub",
-      "icon": "format_line_spacing",
-      "children": [{
-        "state": "basic",
-        "name": "Basic Table",
-        "type": "link"
-      }]
+      "icon": "bars",
+      "children": [
+        {
+          "state": "basic",
+          "name": "Basic Table",
+          "type": "link"
+        }
+      ]
     },
     {
       "state": "profile",
       "name": "Profile",
       "type": "sub",
-      "icon": "person",
+      "icon": "bars",
       "label": {
         "color": "indigo-500",
         "value": "new"
       },
-      "children": [{
-        "state": "overview",
-        "name": "Overview",
-        "type": "link"
-      }, {
-        "state": "settings",
-        "name": "Settings",
-        "type": "link"
-      }]
+      "children": [
+        {
+          "state": "overview",
+          "name": "Overview",
+          "type": "link"
+        },
+        {
+          "state": "settings",
+          "name": "Settings",
+          "type": "link"
+        }
+      ]
     },
     {
       "state": "sessions",
       "name": "Sessions",
       "type": "sub",
-      "icon": "question_answer",
-      "children": [{
+      "icon": "bars",
+      "children": [
+        {
           "state": "403",
           "name": "403",
           "type": "link"
@@ -327,7 +348,7 @@
       "state": "helpers",
       "name": "Helpers",
       "type": "link",
-      "icon": "all_inbox",
+      "icon": "bars",
       "label": {
         "color": "indigo-500",
         "value": "new"

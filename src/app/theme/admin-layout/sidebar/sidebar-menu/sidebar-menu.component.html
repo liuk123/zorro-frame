@@ -1,0 +1,15 @@
+<ul nz-menu nzMode="inline" style="width: 100%;">
+    <li nz-submenu *ngFor="let item of menu" [(nzOpen)]="item.open" (nzOpenChange)="1" [nzTitle]="item.name"
+        [nzIcon]="item.icon">
+        <ul *ngIf="item?.children?.length>0">
+            <li nz-menu-item>Option 5</li>
+            <li nz-menu-item>Option 6</li>
+            <li nz-submenu nzTitle="Submenu">
+                <ul>
+                    <li nz-menu-item>Option 7</li>
+                    <li nz-menu-item>Option 8</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

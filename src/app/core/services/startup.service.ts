@@ -4,11 +4,6 @@ import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MenuService } from './menu.service';
 
-
-/**
- * Used for application startup
- * Generally used to get the basic data of the application, like: Menu Data, User Data, etc.
- */
 @Injectable()
 export class StartupService {
   constructor(private menuService: MenuService, private http: HttpClient) {}
@@ -25,7 +20,7 @@ export class StartupService {
         )
         .subscribe(
           (res: any) => {
-            this.menuService.set(res.menu);
+            this.menuService.menu = res.menu;
           },
           () => {},
           () => {
