@@ -13,4 +13,8 @@ export class SidebarMenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  open(url:string){
+    window.open(url,'_blank');
+  }
+
 }
