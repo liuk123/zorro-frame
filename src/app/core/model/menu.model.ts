@@ -1,21 +1,32 @@
 export interface Tag {
-    color: string; //颜色
-    value: string; //消息数量
-  }
-  
-  export interface ChildrenItem {
-    state: string;
-    name: string;
-    type: 'link' | 'sub' | 'extLink' | 'extTabLink';
-    children?: ChildrenItem[];
-  }
-  export interface Menu {
-    state: string;
-    name: string;
-    type: 'link' | 'sub' | 'extLink' | 'extTabLink';
-    icon: string;
-    label?: Tag;
-    badge?: Tag;
-    open?: Boolean;
-    children?: ChildrenItem[];
-  }
+  color: string; //颜色
+  value: string; //消息数量
+}
+
+export interface ChildrenItem {
+  route: string;
+  link: string;
+  name: string;
+  type: MenuType;
+  children?: ChildrenItem[];
+}
+export interface Menu {
+  route: string;
+  link: string;
+  name: string;
+  type: MenuType;
+  icon: string;
+  badge?: Tag;
+  open?: Boolean;
+  children?: ChildrenItem[];
+}
+
+export interface BreadcrumbItem {
+  name: string;
+  icon?: string;
+  link?: string;
+  route?: string;
+  type?: MenuType
+}
+
+export type MenuType = 'link' | 'router' | 'sub' ;

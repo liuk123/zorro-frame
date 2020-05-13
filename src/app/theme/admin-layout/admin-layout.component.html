@@ -6,10 +6,10 @@
                 <li routerLink="/demo/homepage">主页</li>
                 <li routerLink="/demo/upload">上传文件</li>
             </ul>
-            <app-sidebar></app-sidebar>
+            <app-sidebar [menu]="menu"></app-sidebar>
         </div>
         <div class="m-container">
-            <app-breadcrumb></app-breadcrumb>
+            <app-breadcrumb [breadcrumbMenu]="breadcrumbMenu"></app-breadcrumb>
             <div class="container">
               <router-outlet></router-outlet>
             </div>

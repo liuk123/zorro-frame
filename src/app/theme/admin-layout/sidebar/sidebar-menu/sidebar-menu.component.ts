@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from 'src/app/core/model/menu.model';
-import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -9,14 +8,9 @@ import { MenuService } from 'src/app/core/services/menu.service';
 })
 export class SidebarMenuComponent implements OnInit {
 
-  
-  menu: Menu[];
-  constructor(
-    private menuSrv: MenuService,
-  ) { }
+  @Input() menu: Menu[];
+  constructor() { }
 
-  ngOnInit(): void {
-    this.menu = this.menuSrv.menu;
-  }
+  ngOnInit(): void {}
 
 }

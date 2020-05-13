@@ -1,1 +1,8 @@
-<p>breadcrumb works!</p>
+<nz-breadcrumb>
+    <nz-breadcrumb-item>
+      <a [routerLink]="['../../']">Home</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item *ngFor="let item of breadcrumbMenu">
+      <a [routerLink]="[item.route]">{{item.name}}</a>
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
