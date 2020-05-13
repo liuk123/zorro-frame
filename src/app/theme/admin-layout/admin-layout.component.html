@@ -9,7 +9,9 @@
             <app-sidebar [menu]="menu"></app-sidebar>
         </div>
         <div class="m-container">
-            <app-breadcrumb [breadcrumbMenu]="breadcrumbMenu"></app-breadcrumb>
+            <div class="breadcrumb">
+                <app-breadcrumb [breadcrumbMenu]="breadcrumbMenu"></app-breadcrumb>
+            </div>
             <div class="container">
               <router-outlet></router-outlet>
             </div>

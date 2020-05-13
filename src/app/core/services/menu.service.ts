@@ -33,6 +33,7 @@ export class MenuService {
     this.breadcrumbMenu.length = 0;
     this.addBreadcrumb(links, 0, this.menu);
     this.routerEvent.emit(this.breadcrumbMenu);
+    console.log(this.breadcrumbMenu)
   }
 
   addBreadcrumb(links, index, menu) {
@@ -54,7 +55,7 @@ export class MenuService {
             name: menuItem.name,
           })
         }
-        if (links.length > index && menuItem.children instanceof Array && menuItem.children.length > 0) {
+        if (links.length > index && objectUtil.isArray(menuItem.children) && menuItem.children.length > 0) {
           this.addBreadcrumb(links, index + 1, menuItem.children);
         }
 

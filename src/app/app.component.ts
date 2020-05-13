@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd)).subscribe((v: NavigationEnd) => {
       this.menuSrv.setTitle(v.url);
+      console.log(v.url)
     });
   }
 }
