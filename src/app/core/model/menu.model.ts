@@ -31,7 +31,8 @@ export interface BreadcrumbItem {
   icon?: string;
   link?: string;
   route?: string;
-  type?: MenuType
+  type?: MenuType;
+  children?: any;
 }
 
 export type MenuType = 'link' | 'router' | 'sub' ;

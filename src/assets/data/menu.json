@@ -1,77 +1,4 @@
 {
-  "menus": [
-    {
-      "level": 1,
-      "title": "Mail Group",
-      "icon": "mail",
-      "open": true,
-      "selected": false,
-      "disabled": false,
-      "children": [
-        {
-          "level": 2,
-          "title": "Group 1",
-          "icon": "bars",
-          "open": false,
-          "selected": false,
-          "disabled": false,
-          "children": [
-            {
-              "level": 3,
-              "title": "Option ",
-              "selected": false,
-              "disabled": false
-            },
-            {
-              "level": 3,
-              "title": "Option 2",
-              "selected": false,
-              "disabled": true
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "title": "Group 2",
-          "icon": "bars",
-          "selected": true,
-          "disabled": false
-        },
-        {
-          "level": 2,
-          "title": "Group 3",
-          "icon": "bars",
-          "selected": false,
-          "disabled": false
-        }
-      ]
-    },
-    {
-      "level": 1,
-      "title": "Team Group",
-      "icon": "team",
-      "open": false,
-      "selected": false,
-      "disabled": false,
-      "children": [
-        {
-          "level": 2,
-          "title": "User 1",
-          "icon": "user",
-          "selected": false,
-          "disabled": false
-        },
-        {
-          "level": 2,
-          "title": "User 2",
-          "icon": "user",
-          "selected": false,
-          "disabled": false
-        }
-      ]
-    }
-  ],
-
   "menu": [
     {
       "route": "/demo",
@@ -93,6 +20,49 @@
           "route": "/demo/upload",
           "title": "上传",
           "type": "router"
+        }
+      ]
+    },{
+      "route": "/setting",
+      "title": "设置",
+      "type": "sub",
+      "icon": "bars",
+      "children": [
+        {
+          "route": "/setting/user-setting",
+          "title": "用户设置",
+          "type": "sub",
+          "icon": "bars",
+          "children": [
+            {
+              "route": "/setting/user-setting/user",
+              "title": "功能设置",
+              "type": "router"
+            },
+            {
+              "route": "/setting/user-setting/data",
+              "title": "权限设置",
+              "type": "router"
+            }
+          ]
+        },
+        {
+          "route": "/setting/sys-setting",
+          "title": "系统设置",
+          "type": "sub",
+          "icon": "bars",
+          "children": [
+            {
+              "route": "/setting/user-setting/user",
+              "title": "功能设置",
+              "type": "router"
+            },
+            {
+              "route": "/setting/user-setting/data",
+              "title": "权限设置",
+              "type": "router"
+            }
+          ]
         }
       ]
     },

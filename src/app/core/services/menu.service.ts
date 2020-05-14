@@ -31,14 +31,14 @@ export class MenuService {
     this.breadcrumbStr = value;
     let links = this.breadcrumbStr.slice(1).split('/');
     this.breadcrumbMenu.length = 0;
-    this.addBreadcrumb(links, 0, this.menu);
+    this.setBreadcrumb(links, 0, this.menu);
     this.routerEvent.emit(this.breadcrumbMenu);
     console.log(this.breadcrumbMenu)
   }
 
-  addBreadcrumb(links, index, menu) {
+  setBreadcrumb(links, index, menu) {
     for (let menuItem of menu) {
-      if (links[index] == menuItem.route) {
+      if (!objectUtil.isBlank(menuItem.route) && links[index] == menuItem.route.slice(menuItem.route.lastIndexOf('/')+1)) {
 
         if (menuItem.type == "router") {
           this.breadcrumbMenu.push({
@@ -53,14 +53,38 @@ export class MenuService {
         } else if (menuItem.type == "sub") {
           this.breadcrumbMenu.push({
             title: menuItem.title,
-            route: menuItem.route,
+            children: this.addBreadcrumb(menuItem.children)
           })
         }
         if (links.length > index && objectUtil.isArray(menuItem.children) && menuItem.children.length > 0) {
-          this.addBreadcrumb(links, index + 1, menuItem.children);
+          this.setBreadcrumb(links, index + 1, menuItem.children);
         }
 
       }
     }
   }
+
+  addBreadcrumb(menu){
+    let tem = []
+    for(let menuItem of menu){
+      if (menuItem.type == "router") {
+        tem.push({
+          title: menuItem.title,
+          route: menuItem.route,
+        })
+      } else if (menuItem.type == "link") {
+        tem.push({
+          title: menuItem.title,
+          link: menuItem.link,
+        })
+      } else if (menuItem.type == "sub") {
+        tem.push({
+          title: menuItem.title,
+          children: this.addBreadcrumb(menuItem.children)
+        })
+      }
+    }
+    return tem;
+  }
+
 }
