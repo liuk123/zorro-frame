@@ -4,7 +4,7 @@ export interface Tag {
 }
 
 export interface ChildrenItem {
-  name: string;
+  title: string;
   type: MenuType;
   disabled: boolean;
   selected: boolean;
@@ -14,7 +14,7 @@ export interface ChildrenItem {
 }
 export interface Menu {
  
-  name: string;
+  title: string;
   type: MenuType;
   icon: string;
   disabled: boolean;
@@ -27,7 +27,7 @@ export interface Menu {
 }
 
 export interface BreadcrumbItem {
-  name: string;
+  title: string;
   icon?: string;
   link?: string;
   route?: string;

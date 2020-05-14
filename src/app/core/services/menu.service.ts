@@ -42,17 +42,17 @@ export class MenuService {
 
         if (menuItem.type == "router") {
           this.breadcrumbMenu.push({
-            name: menuItem.name,
+            title: menuItem.title,
             route: menuItem.route,
           })
         } else if (menuItem.type == "link") {
           this.breadcrumbMenu.push({
-            name: menuItem.name,
+            title: menuItem.title,
             link: menuItem.link,
           })
         } else if (menuItem.type == "sub") {
           this.breadcrumbMenu.push({
-            name: menuItem.name,
+            title: menuItem.title,
           })
         }
         if (links.length > index && objectUtil.isArray(menuItem.children) && menuItem.children.length > 0) {

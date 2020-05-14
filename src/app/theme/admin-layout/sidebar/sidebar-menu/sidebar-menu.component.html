@@ -1,23 +1,20 @@
 <ul nz-menu nzMode="inline" style="width: 100%;height:100%">
-    <ng-container *ngFor="let item of menu">
-        <ng-container [ngSwitch]="item.type">
-            <li nz-submenu *ngSwitchCase="'sub'" nzTheme="dark" [(nzOpen)]="item.open" (nzOpenChange)="1" [nzTitle]="item.name"
-                [nzIcon]="item.icon">
-                <ul>
-                    <ng-container *ngFor="let subItem of item?.children">
-                        <ng-container [ngSwitch]="subItem.type">
-                            <li nz-menu-item *ngSwitchCase="'router'" [routerLink]="['/' + item.route + '/' + subItem.route]"
-                                >{{subItem.name}}</li>
-                            <li nz-menu-item *ngSwitchCase="'link'" (click)="open(item.link)">
-                                {{item.name}}</li>
-                        </ng-container>
-                    </ng-container> 
-                </ul>
-            </li>
-            <li nz-menu-item *ngSwitchCase="'router'" [routerLink]="['/' + item.route]">
-                {{item.name}}</li>
-            <li nz-menu-item *ngSwitchCase="'link'" (click)="open(item.link)">
-                {{item.name}}</li>
+    <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menu }"></ng-container>
+    <ng-template #menuTpl let-menu>
+        <ng-container *ngFor="let item of menu">
+            <ng-container [ngSwitch]="item.type">
+                <li nz-submenu *ngSwitchCase="'sub'" nzTheme="dark" [(nzOpen)]="item.open" (nzOpenChange)="1" [nzTitle]="item.title"
+                    [nzIcon]="item.icon">
+                    <ul *ngIf="item.children">
+                    <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: item.children }"></ng-container>
+                    </ul>
+                </li>
+                <li nz-menu-item *ngSwitchCase="'router'" [routerLink]="['/' + item.route]">
+                    {{item.title}}</li>
+                <li nz-menu-item *ngSwitchCase="'link'" (click)="open(item.link)">
+                    {{item.title}}</li>
+            </ng-container>
         </ng-container>
-    </ng-container>
+    </ng-template>
+    
 </ul>

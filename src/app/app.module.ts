@@ -25,8 +25,8 @@ export function StartupServiceFactory(startupService: StartupService) {
 
     SharedModule,
     CoreModule,
-    RoutesModule,
     ThemeModule,
+    RoutesModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },

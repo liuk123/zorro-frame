@@ -75,7 +75,7 @@
   "menu": [
     {
       "route": "demo",
-      "name": "模版",
+      "title": "模版",
       "type": "sub",
       "open": true,
       "icon": "bars",
@@ -86,19 +86,19 @@
       "children": [
         {
           "route": "homepage",
-          "name": "首页",
+          "title": "首页",
           "type": "router"
         },
         {
           "route": "upload",
-          "name": "上传",
+          "title": "上传",
           "type": "router"
         }
       ]
     },
     {
       "link": "https://ng.ant.design/components/button/zh",
-      "name": "zorro",
+      "title": "zorro",
       "type": "link",
       "icon": "bars",
       "label": {

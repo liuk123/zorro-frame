@@ -9,11 +9,12 @@ import { SidebarMenuComponent } from './admin-layout/sidebar/sidebar-menu/sideba
 import { SidebarItemComponent } from './admin-layout/sidebar/sidebar-item/sidebar-item.component';
 
 const SETTINGDRAWER = [];
-const COMPONENTS = [AdminLayoutComponent];
+const COMPONENTS = [];
 
 @NgModule({
   declarations: [
     ...COMPONENTS,
+    AdminLayoutComponent,
     SidebarComponent,
     HeaderComponent,
     BreadcrumbComponent,

@@ -3,6 +3,6 @@
       <a [routerLink]="['../../']">Home</a>
     </nz-breadcrumb-item>
     <nz-breadcrumb-item *ngFor="let item of breadcrumbMenu">
-      <a [routerLink]="['./'+item.route]">{{item.name + '-' + item.route}}</a>
+      <a [routerLink]="['./'+item.route]">{{item.title + '-' + item.route}}</a>
     </nz-breadcrumb-item>
   </nz-breadcrumb>

@@ -8,3 +8,5 @@
 // export * from './src/app/luban-help-component/luban-help-component.module';
 // export * from './src/app/luban-layout/luban-layout.module';
 // export * from './src/app/luban-pipe/luban-pipe.module';
+
+export * from './node_modules/prime-jsutils';
