@@ -53,6 +53,7 @@ export class MenuService {
         } else if (menuItem.type == "sub") {
           this.breadcrumbMenu.push({
             title: menuItem.title,
+            route: menuItem.route,
           })
         }
         if (links.length > index && objectUtil.isArray(menuItem.children) && menuItem.children.length > 0) {

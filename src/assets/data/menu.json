@@ -74,7 +74,7 @@
 
   "menu": [
     {
-      "route": "demo",
+      "route": "/demo",
       "title": "模版",
       "type": "sub",
       "open": true,
@@ -85,12 +85,12 @@
       },
       "children": [
         {
-          "route": "homepage",
+          "route": "/demo/homepage",
           "title": "首页",
           "type": "router"
         },
         {
-          "route": "upload",
+          "route": "/demo/upload",
           "title": "上传",
           "type": "router"
         }
