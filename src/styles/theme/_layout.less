@@ -1,34 +1,33 @@
-html, body, app-root, .site {
+html, body, app-root, .nzlayout-site {
     width:100%;
-    min-height: calc(100vh + 64px);
+    min-height: calc(100vh);
 }
-.site{
+.nzlayout-site{
     display: flex;
     flex-direction: column;
     app-header{
         height: 3rem;
-        box-shadow: 0 0 6px 30px rgba(9,9,9,0.3);
+        box-shadow: 0 6px 22px -16px rgba(6, 6, 6, 0.4);
     }
     main{
         flex: 1 1 auto;
         overflow: auto;
-        height: calc(100vh - 2rem);
+        height: calc(100vh - 3rem);
         display: flex;
-        .sidebar{
+        .nzlayout-sidebar{
             width:15rem;
-            // background-color: #ddd;
             overflow-y: auto;
             overflow-x: auto;
         }
-        .m-container{
+        .nzlayout-main-container{
             flex: 1 1 auto;
             overflow-y: auto;
-            background-color: #e9e9e9;
+            background-color: #f7f9fa;
             padding:0 .5rem;
-            .breadcrumb{
+            .nzlayout-breadcrumb{
                 padding: .5rem 0;
             }
-            .container{
+            .nzlayout-container{
                 padding: .5rem;
                 background-color: #fff;
                 height: calc(100% - 2.5rem);

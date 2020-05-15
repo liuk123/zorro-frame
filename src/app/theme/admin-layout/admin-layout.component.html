@@ -1,17 +1,16 @@
-<div class="site">
+<div class="nzlayout-site">
     <app-header></app-header>
     <main>
-        <div class="sidebar">
+        <div class="nzlayout-sidebar">
             <app-sidebar [menu]="menu"></app-sidebar>
         </div>
-        <div class="m-container">
-            <div class="breadcrumb">
+        <div class="nzlayout-main-container">
+            <div class="nzlayout-breadcrumb">
                 <app-breadcrumb [breadcrumbMenu]="breadcrumbMenu"></app-breadcrumb>
             </div>
-            <div class="container">
+            <div class="nzlayout-container">
               <router-outlet></router-outlet>
             </div>
         </div>
     </main>
-    <app-footer></app-footer>
 </div>

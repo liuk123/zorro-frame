@@ -1,4 +1,4 @@
-<ul nz-menu nzMode="inline" nzTheme="light" style="height:100%">
+<ul nz-menu nzMode="inline" nzTheme="dark" style="height:100%">
     <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menu }"></ng-container>
     <ng-template #menuTpl let-menu>
         <ng-container *ngFor="let item of menu">
@@ -16,5 +16,4 @@
             </ng-container>
         </ng-container>
     </ng-template>
-    
 </ul>

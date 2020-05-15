@@ -6,10 +6,6 @@
       "type": "sub",
       "open": true,
       "icon": "bars",
-      "badge": {
-        "color": "red-500",
-        "value": "5"
-      },
       "children": [
         {
           "route": "/demo/homepage",
@@ -23,58 +19,23 @@
         }
       ]
     },{
-      "route": "/setting",
-      "title": "设置",
+      "route": "/links",
+      "title": "网站",
       "type": "sub",
+      "open": false,
       "icon": "bars",
       "children": [
         {
-          "route": "/setting/user-setting",
-          "title": "用户设置",
-          "type": "sub",
-          "icon": "bars",
-          "children": [
-            {
-              "route": "/setting/user-setting/user",
-              "title": "功能设置",
-              "type": "router"
-            },
-            {
-              "route": "/setting/user-setting/data",
-              "title": "权限设置",
-              "type": "router"
-            }
-          ]
+          "link": "https://ng.ant.design/components/button/zh",
+          "title": "zorro",
+          "type": "link"
         },
         {
-          "route": "/setting/sys-setting",
-          "title": "系统设置",
-          "type": "sub",
-          "icon": "bars",
-          "children": [
-            {
-              "route": "/setting/user-setting/user",
-              "title": "功能设置",
-              "type": "router"
-            },
-            {
-              "route": "/setting/user-setting/data",
-              "title": "权限设置",
-              "type": "router"
-            }
-          ]
+          "link": "https://angular.cn/guide/template-syntax",
+          "title": "angular",
+          "type": "link"
         }
       ]
-    },
-    {
-      "link": "https://ng.ant.design/components/button/zh",
-      "title": "zorro",
-      "type": "link",
-      "icon": "bars",
-      "label": {
-        "color": "indigo-500",
-        "value": "new"
-      }
     }
   ]
 }
