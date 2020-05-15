@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuService } from 'src/app/core/services/menu.service';
-import { Menu, BreadcrumbItem } from 'src/app/core/model/menu.model';
+import { Menu, BreadcrumbMenu } from 'src/app/core/model/menu.model';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { takeUntil } from 'rxjs/operators';
 export class AdminLayoutComponent implements OnInit, OnDestroy {
 
   menu: Menu[];
-  breadcrumbMenu: BreadcrumbItem[] = [];
+  breadcrumbMenu: BreadcrumbMenu[] = [];
   private unsubscribe$ = new Subject<void>();
 
   constructor(
@@ -19,7 +19,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   ) {
     this.menu = this.menuSrv.menu;
     this.menuSrv.routerEvent.pipe(takeUntil(this.unsubscribe$),).subscribe(v => 
-      this.breadcrumbMenu = this.menuSrv.breadcrumbMenu);
+      this.breadcrumbMenu = v);
   }
 
   ngOnInit(): void { }

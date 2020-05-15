@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { objectUtil } from 'prime-jsutils';
-import { Menu, BreadcrumbItem } from '../model/menu.model';
+import { Menu, BreadcrumbMenu } from '../model/menu.model';
 
 const replaceObj = {
   state: 'id',
@@ -24,8 +24,8 @@ export class MenuService {
   }
 
   breadcrumbStr: string;
-  breadcrumbMenu: BreadcrumbItem[] = [];
-  routerEvent = new EventEmitter();
+  breadcrumbMenu: BreadcrumbMenu[] = [];
+  routerEvent = new EventEmitter<BreadcrumbMenu[]>();
 
   setTitle(value) {
     this.breadcrumbStr = value;

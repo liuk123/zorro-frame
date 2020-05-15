@@ -26,7 +26,7 @@ export interface Menu {
   children?: ChildrenItem[];
 }
 
-export interface BreadcrumbItem {
+export interface BreadcrumbMenu {
   title: string;
   icon?: string;
   link?: string;
