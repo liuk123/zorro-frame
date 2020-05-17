@@ -3,21 +3,18 @@ html, body, app-root, .nzlayout-site {
     min-height: calc(100vh);
 }
 .nzlayout-site{
-    display: flex;
-    flex-direction: column;
-    app-header{
+    header{
         height: 3rem;
         box-shadow: 0 6px 22px -16px rgba(6, 6, 6, 0.4);
     }
     main{
-        flex: 1 1 auto;
-        overflow: auto;
         height: calc(100vh - 3rem);
+        width:100%;
         display: flex;
         .nzlayout-sidebar{
-            width:15rem;
             overflow-y: auto;
             overflow-x: auto;
+            flex:0 0 15rem;
         }
         .nzlayout-main-container{
             flex: 1 1 auto;
@@ -31,6 +28,7 @@ html, body, app-root, .nzlayout-site {
                 padding: .5rem;
                 background-color: #fff;
                 height: calc(100% - 2.5rem);
+                overflow-y: auto;
             }
         }
     }
