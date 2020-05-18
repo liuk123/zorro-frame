@@ -11,8 +11,8 @@ export class ProjModel{
     
     static projTypeDefaultValue = "3"
     static projTypeOption = [
-        {code: '1', name: '1'},
-        {code: '2', name: '2'},
-        {code: '3', name: '3'}
+        {code: '1', name: '项目类型1'},
+        {code: '2', name: '项目类型2'},
+        {code: '3', name: '项目类型3'}
     ]
 }
