@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "ng-zorro-antd": "^9.1.0",
     "prime-jsutils": "^1.0.1",
     "prime-zorro": "0.0.0",
