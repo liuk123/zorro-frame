@@ -49,6 +49,8 @@ const I18NSERVICE_MODULES = [
     },
   }),
 ];
+
+const I18NSERVICE_PROVIDES = [{ provide: "I18N_TOKEN", useClass: I18NService, multi: false }];
 // #endregion
 
 // #region Http Interceptors
@@ -94,6 +96,7 @@ const APPINIT_PROVIDES = [
   providers: [
     ...INTERCEPTOR_PROVIDES,
     ...APPINIT_PROVIDES,
+    ...I18NSERVICE_PROVIDES,
     { provide:'CONFIG', useValue: commonConfig }
   ],
   bootstrap: [AppComponent]
