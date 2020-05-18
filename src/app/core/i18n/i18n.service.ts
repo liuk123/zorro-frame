@@ -67,7 +67,7 @@ export class I18NService {
     if (lans.includes(defaultLan)) {
       this._default = defaultLan;
     }
-console.log("default" + this._default)
+    console.log("default" + this._default)
     this.updateLangData(this._default);
   }
 

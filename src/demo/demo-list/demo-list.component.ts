@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-
+import { ProjModel } from "../../app/biz/model/proj.model"
 @Component({
   selector: 'app-demo-list',
   templateUrl: './demo-list.component.html',
@@ -9,8 +9,9 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 export class DemoListComponent implements OnInit {
 
   validateForm!: FormGroup;
-  // controlArray: Array<{ index: number; show: boolean }> = [];
   isCollapse = true;
+  ProjModel = ProjModel;
+  
 
   constructor(private fb: FormBuilder) { }
 
@@ -20,7 +21,7 @@ export class DemoListComponent implements OnInit {
       projCode: [null],
       amount:[null],
       projTime: [null],
-      projType: [null],
+      projType: [ProjModel.projTypeDefaultValue],
     });
   }
 
@@ -31,6 +32,7 @@ export class DemoListComponent implements OnInit {
     }
     console.log(this.validateForm.value)
   }
+
   toggleCollapse(): void {
     this.isCollapse = !this.isCollapse;
   }
@@ -39,4 +41,10 @@ export class DemoListComponent implements OnInit {
     this.validateForm.reset();
   }
 
+}
+
+let data = {
+  label: "项目编号",
+  value: "projCode",
+  type: "string",
 }
