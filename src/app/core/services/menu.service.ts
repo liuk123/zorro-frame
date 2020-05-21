@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { objectUtil } from 'prime-jsutils';
 import { Menu, BreadcrumbMenu } from '../model/menu.model';
+import { Subject } from 'rxjs';
 
 const replaceObj = {
   state: 'id',
@@ -25,14 +26,16 @@ export class MenuService {
 
   breadcrumbStr: string;
   breadcrumbMenu: BreadcrumbMenu[] = [];
-  routerEvent = new EventEmitter<BreadcrumbMenu[]>();
+
+  private itemSource = new Subject<BreadcrumbMenu[]>();
+  routerEvent = this.itemSource.asObservable();
 
   setTitle(value) {
     this.breadcrumbStr = value;
     let links = this.breadcrumbStr.slice(1).split('/');
     this.breadcrumbMenu.length = 0;
     this.setBreadcrumb(links, 0, this.menu);
-    this.routerEvent.emit(this.breadcrumbMenu);
+    this.itemSource.next(this.breadcrumbMenu);
     console.log(this.breadcrumbMenu)
   }
 

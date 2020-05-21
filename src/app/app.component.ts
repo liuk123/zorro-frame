@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { MenuService } from './core/services/menu.service';
 
 @Component({
@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private menuSrv: MenuService
-  ) {
-  }
+  ) {}
+  
   ngOnInit(){
     this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd)).subscribe((v: NavigationEnd) => {
-      this.menuSrv.setTitle(v.url);
+      this.menuSrv.setTitle(v.urlAfterRedirects);
       console.log(v.url)
     });
   }
