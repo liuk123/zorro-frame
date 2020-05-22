@@ -26,11 +26,7 @@ export class HomepageComponent implements OnInit {
 
 
   context = this
-
-  @Input()
   todoId = 1
-
-  @Input()
   retryTimes = 0
 
   refetch$$ = new Subject<void>()

@@ -36,7 +36,7 @@ export class MenuService {
     this.breadcrumbMenu.length = 0;
     this.setBreadcrumb(links, 0, this.menu);
     this.itemSource.next(this.breadcrumbMenu);
-    console.log(this.breadcrumbMenu)
+    // console.log(this.breadcrumbMenu)
   }
 
   setBreadcrumb(links, index, menu) {

@@ -5,6 +5,7 @@ import { UploadService } from 'src/app/biz/services/upload.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -19,8 +20,7 @@ export class UploadComponent implements OnInit {
   imgSrcs: string[] = [];
   uploadProgress: number;
   constructor(private srv: UploadService, private fb: FormBuilder, public _d: DomSanitizer) { }
-  ngOnInit() {
-  }
+  ngOnInit() { }
   onSubmit({ value, valid }, ev) {
     if (this.fileList && this.fileList.length > 0) {
       let formData: FormData = new FormData();

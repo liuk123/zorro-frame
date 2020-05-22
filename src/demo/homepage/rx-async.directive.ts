@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http'
 import { OnInit, OnDestroy, Input, TemplateRef, ViewContainerRef, ViewRef, Directive} from '@angular/core'
 import { Observable, Subject, combineLatest, Subscription } from 'rxjs'
 import { startWith, takeUntil, withLatestFrom, retry, finalize,  } from 'rxjs/operators'
-import { ObservableInput } from './observable-input.directive'
+import { ObservableInput } from './observable-input'
 
 type Callback<T extends any[] = never, R = void> = (...params: T) => R
 export type Nullable<T> = T | null | undefined
@@ -101,7 +101,7 @@ export interface AsyncDirectiveContext<T, E> {
           if (this.viewRef) {
             return this.viewRef.markForCheck()
           }
-  
+          
           this.viewRef = this.viewContainerRef.createEmbeddedView(
             this.templateRef,
             this.context,
