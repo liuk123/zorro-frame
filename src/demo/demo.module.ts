@@ -4,9 +4,10 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DemoRoutingModule } from './demo-routing.module';
 import { UploadComponent } from './upload/upload.component';
 import { DemoListComponent } from './demo-list/demo-list.component';
+import { StepComponent } from './step/step.component';
 
 @NgModule({
-  declarations: [HomepageComponent, UploadComponent, DemoListComponent],
+  declarations: [HomepageComponent, UploadComponent, DemoListComponent, StepComponent],
   imports: [
     SharedModule,
     DemoRoutingModule

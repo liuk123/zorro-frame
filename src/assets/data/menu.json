@@ -21,6 +21,11 @@
           "route": "/demo/demo-list",
           "title": "列表页",
           "type": "router"
+        },
+        {
+          "route": "/demo/step",
+          "title": "步骤",
+          "type": "router"
         }
       ]
     },{

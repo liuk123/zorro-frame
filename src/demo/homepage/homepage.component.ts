@@ -10,7 +10,7 @@ import { MessageUtilService } from 'prime-zorro'
 })
 export class HomepageComponent implements OnInit {
 
-  title="";
+  title="webzorro";
   constructor(
     @Inject('CONFIG') private config,
     private messageUtil: MessageUtilService,
@@ -20,5 +20,6 @@ export class HomepageComponent implements OnInit {
   createBasicMessage(): void {
     this.messageUtil.success();
   }
+  
 }
 

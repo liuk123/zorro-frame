@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UploadComponent } from './upload/upload.component';
 import { DemoListComponent } from './demo-list/demo-list.component';
+import { StepComponent } from './step/step.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full'},
@@ -15,6 +16,9 @@ const routes: Routes = [
     },{
         path:'demo-list',
         component: DemoListComponent,
+    },{
+        path:'step',
+        component: StepComponent,
     }
 ];
 

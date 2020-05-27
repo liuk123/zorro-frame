@@ -1,17 +1,23 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
-    <input
-        type="file"
-        multiple
-        name="img"
-        placeholder="Upload file"
-        (change)="fileChange($event)"
-        accept=".pdf,.jpg,.jpeg,.png">
+<div class="form-group-panel">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
+        <input
+            type="file"
+            multiple
+            name="img"
+            placeholder="Upload file"
+            (change)="fileChange($event)"
+            accept=".pdf,.jpg,.jpeg,.png">
+    
+        <input type="text" formControlName="imgName">
+        <button type="submit">上传图片</button>
+    </form>
+    <ul>
+        <li *ngFor="let img of imgSrcs; let i = index">
+            <img [src]="_d.bypassSecurityTrustUrl(img)">
+        </li>
+    </ul>
+</div>
 
-    <input type="text" formControlName="imgName">
-    <button type="submit">上传图片</button>
-</form>
-<ul>
-    <li *ngFor="let img of imgSrcs; let i = index">
-        <img [src]="_d.bypassSecurityTrustUrl(img)">
-    </li>
-</ul>
+<div class="save-btn-group">
+    <button nz-button nzType="primary">保存</button>
+</div>
