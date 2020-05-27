@@ -6,6 +6,8 @@
         placeholder="Upload file"
         (change)="fileChange($event)"
         accept=".pdf,.jpg,.jpeg,.png">
+
+    <input type="text" formControlName="imgName">
     <button type="submit">上传图片</button>
 </form>
 <ul>

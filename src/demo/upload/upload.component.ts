@@ -13,15 +13,26 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 })
 export class UploadComponent implements OnInit {
 
+  disabled: boolean = true;
   form: FormGroup = this.fb.group({
-    name: [],
+    imgName: [{value: 123, disabled: this.disabled}],
   });
+
+
+
   fileList: FileList;
   imgSrcs: string[] = [];
   uploadProgress: number;
+
   constructor(private srv: UploadService, private fb: FormBuilder, public _d: DomSanitizer) { }
   ngOnInit() { }
   onSubmit({ value, valid }, ev) {
+
+    this.disabled = !this.disabled;
+    this.form.get("imgName").reset({value: value.imgName,disabled:this.disabled})
+    console.log(this.disabled)
+    console.log(value)
+
     if (this.fileList && this.fileList.length > 0) {
       let formData: FormData = new FormData();
       for (let i = 0; i < this.fileList.length; i++) {

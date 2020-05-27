@@ -2,21 +2,3 @@
 <button nz-button nzType="primary" (click)="createBasicMessage()">Display normal message</button>
 
 <i nz-icon [nzType]="'home'"></i>
-
-<button (click)="refetch$$.next()">Refetch (Outside rxAsync)</button>
-<div *rxAsync="
-        let loading = loading;
-        let error = error;
-        let todo = todo;
-        let reload = reload;
-        context: context;
-        fetcher: fetchTodo;
-        params: todoId;
-        refetch: refetch$$;
-        retryTimes: retryTimes
-      ">
-    <button (click)="reload()">Reload</button>
-    loading: {{ loading }}<br>
-    todo:{{todo|json}}<br>
-    error: {{ error | json }}
-</div>
