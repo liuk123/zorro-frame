@@ -4,6 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { UploadComponent } from './upload/upload.component';
 import { DemoListComponent } from './demo-list/demo-list.component';
 import { StepComponent } from './step/step.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full'},
@@ -19,6 +20,9 @@ const routes: Routes = [
     },{
         path:'step',
         component: StepComponent,
+    },{
+        path:'dialog',
+        component: DialogComponent,
     }
 ];
 
