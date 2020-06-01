@@ -8,6 +8,7 @@ export interface ChildrenItem {
   type: MenuType;
   disabled: boolean;
   selected: boolean;
+  open?: boolean;
   route?: string;
   link?: string;
   children?: ChildrenItem[];
@@ -19,10 +20,10 @@ export interface Menu {
   icon: string;
   disabled: boolean;
   selected: boolean;
+  open?: boolean;
   route?: string;
   link?: string;
   badge?: Tag;
-  open?: Boolean;
   children?: ChildrenItem[];
 }
 

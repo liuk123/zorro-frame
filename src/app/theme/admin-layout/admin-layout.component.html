@@ -2,7 +2,7 @@
     <app-header></app-header>
     <main>
         <div class="nzlayout-sidebar">
-            <app-sidebar [menu]="menu"></app-sidebar>
+            <app-sidebar [menu]="menu" (openEvent)="openEvent($event)"></app-sidebar>
         </div>
         <div class="nzlayout-main-container">
             <div class="nzlayout-breadcrumb">

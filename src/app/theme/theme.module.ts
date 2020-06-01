@@ -5,7 +5,6 @@ import { SidebarComponent } from './admin-layout/sidebar/sidebar.component';
 import { HeaderComponent } from './admin-layout/header/header.component';
 import { BreadcrumbComponent } from './admin-layout/breadcrumb/breadcrumb.component';
 import { FooterComponent } from './admin-layout/footer/footer.component';
-import { SidebarMenuComponent } from './admin-layout/sidebar/sidebar-menu/sidebar-menu.component';
 
 const SETTINGDRAWER = [];
 const COMPONENTS = [];
@@ -18,7 +17,6 @@ const COMPONENTS = [];
     HeaderComponent,
     BreadcrumbComponent,
     FooterComponent,
-    SidebarMenuComponent,
   ],
   imports: [
     SharedModule,

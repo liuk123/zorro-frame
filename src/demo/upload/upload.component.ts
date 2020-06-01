@@ -30,6 +30,7 @@ export class UploadComponent implements OnInit {
 
     this.disabled = !this.disabled;
     this.form.get("imgName").reset({value: value.imgName,disabled:this.disabled})
+    // this.form.get("imgName").disable()
     console.log(this.disabled)
     console.log(value)
 

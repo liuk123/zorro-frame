@@ -4,7 +4,7 @@
       "route": "/demo",
       "title": "模版",
       "type": "sub",
-      "open": true,
+      "selected": false,
       "icon": "bars",
       "children": [
         {
@@ -32,7 +32,7 @@
       "route": "/links",
       "title": "网站",
       "type": "sub",
-      "open": false,
+      "selected": true,
       "icon": "bars",
       "children": [
         {
