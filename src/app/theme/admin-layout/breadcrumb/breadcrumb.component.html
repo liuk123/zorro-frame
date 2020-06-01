@@ -4,10 +4,10 @@
   </nz-breadcrumb-item>
 
   <ng-container *ngFor="let breadcrumbItem of breadcrumbMenu">
-    <nz-breadcrumb-item *ngIf="breadcrumbItem?.route">
+    <nz-breadcrumb-item *ngIf="breadcrumbItem?.type == 'router'">
       <a [routerLink]="[breadcrumbItem.route]">{{breadcrumbItem.title}}</a>
     </nz-breadcrumb-item>
-    <nz-breadcrumb-item *ngIf="breadcrumbItem?.children" [nzOverlay]="downMenu">
+    <nz-breadcrumb-item *ngIf="breadcrumbItem?.type == 'sub'" [nzOverlay]="downMenu">
       {{breadcrumbItem.title}}
 
       <nz-dropdown-menu #downMenu>
@@ -15,9 +15,9 @@
           <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: breadcrumbItem }"></ng-container>
           <ng-template #menuTpl let-breadcrumbItem>
             <ng-container *ngFor="let subBreadcrumb of breadcrumbItem.children">
-              <li nz-submenu *ngIf="subBreadcrumb.children else subMenu" 
+              <li nz-submenu *ngIf="subBreadcrumb.type == 'sub' else subMenu" 
               [nzTitle]="subBreadcrumb.title">
-                <ul nz-menu nzSelectable *ngIf="subBreadcrumb.children">
+                <ul nz-menu nzSelectable *ngIf="subBreadcrumb.type == 'sub'">
                   <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: subBreadcrumb }"></ng-container>
                 </ul>
               </li>

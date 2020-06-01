@@ -11,6 +11,6 @@ export class BreadcrumbComponent implements OnInit {
   @Input() breadcrumbMenu: BreadcrumbMenu[] = [];
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { console.log(this.breadcrumbMenu)}
 
 }

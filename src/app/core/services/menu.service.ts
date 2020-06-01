@@ -36,6 +36,7 @@ export class MenuService {
     this.breadcrumbMenu.length = 0;
     this.setBreadcrumb(links, 0, this.menu);
     this.itemSource.next(this.breadcrumbMenu);
+    console.log(this.breadcrumbMenu)
   }
 
   setBreadcrumb(links, index, menu) {
@@ -45,16 +46,19 @@ export class MenuService {
         if (menuItem.type == "router") {
           this.breadcrumbMenu.push({
             title: menuItem.title,
+            type: "router",
             route: menuItem.route,
           })
         } else if (menuItem.type == "link") {
           this.breadcrumbMenu.push({
             title: menuItem.title,
+            type: "link",
             link: menuItem.link,
           })
         } else if (menuItem.type == "sub") {
           this.breadcrumbMenu.push({
             title: menuItem.title,
+            type: "sub",
             route: menuItem.route,
             children: this.addBreadcrumb(menuItem.children)
           })
