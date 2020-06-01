@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Menu, BreadcrumbMenu } from 'src/app/core/model/menu.model';
+import { Component, OnInit, Input } from '@angular/core';
+import { Menu } from 'src/app/core/model/menu.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,6 @@ import { Menu, BreadcrumbMenu } from 'src/app/core/model/menu.model';
 export class SidebarComponent implements OnInit {
 
   @Input() menu: Menu[];
-  @Output() openEvent = new EventEmitter<string>()
   constructor() { }
 
   ngOnInit(): void { }
@@ -19,6 +18,6 @@ export class SidebarComponent implements OnInit {
   }
 
   openHandler(route: string){
-    this.openEvent.emit(route);
+      this.menu.forEach(v=>v.open = v.route == route)
   }
 }

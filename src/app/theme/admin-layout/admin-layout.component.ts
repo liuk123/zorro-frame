@@ -20,7 +20,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   ) {
     menuSrv.routerEvent.pipe(takeUntil(this.unsubscribe$)).subscribe(v => {
       this.breadcrumbMenu = v;
-      this.menu = this.setMenuOpen(menuSrv.menu, this.breadcrumbMenu);
+      this.menu= menuSrv.menu;
     });
   }
 
@@ -30,28 +30,5 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
-
-  openEvent(ev){
-    this.menu.forEach(v=>{
-      v.open = v.route == ev;
-    })
-  }
-
-  setMenuOpen(menu,breadcrumbMenu){
-    if(objectUtil.isObject(menu) && menu.type == 'sub'){
-      if(breadcrumbMenu.map(v=>{if(v.route) return v.route}).includes(menu.route.slice(menu.route.lastIndexOf('/')))){
-        menu.open = true;
-      }else{
-        menu.open = false;
-      }
-      if(menu.children){
-        this.setMenuOpen(menu.children, breadcrumbMenu);
-      }
-    }else if(objectUtil.isArray(menu)){
-      menu.forEach(v=>{
-        this.setMenuOpen(v, breadcrumbMenu);
-      })
-    }
-    return menu;
-  }
+  
 }

@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { objectUtil } from 'prime-jsutils';
 import { Menu, BreadcrumbMenu } from '../model/menu.model';
 import { Subject } from 'rxjs';
@@ -17,10 +17,8 @@ export class MenuService {
     return this._menu;
   }
   set menu(v) {
-    if (!objectUtil.isEmptyObject(replaceObj)) {
-      this._menu = this.menu.concat(objectUtil.replaceObjKey(v, replaceObj));
-    } else {
-      this._menu = this.menu.concat(v);
+    if(!objectUtil.isArray(replaceObj)){
+      this._menu = objectUtil.replaceObjKey(v, replaceObj);
     }
   }
 
@@ -35,8 +33,8 @@ export class MenuService {
     let links = this.breadcrumbStr.slice(1).split('/');
     this.breadcrumbMenu.length = 0;
     this.setBreadcrumb(links, 0, this.menu);
+    this.menu = this.setMenuOpen(this.menu, this.breadcrumbMenu);
     this.itemSource.next(this.breadcrumbMenu);
-    console.log(this.breadcrumbMenu)
   }
 
   setBreadcrumb(links, index, menu) {
@@ -92,6 +90,24 @@ export class MenuService {
       }
     }
     return tem;
+  }
+
+  setMenuOpen(menu,breadcrumbMenu){
+    if(objectUtil.isObject(menu) && menu.type == 'sub'){
+      if(breadcrumbMenu.map(v=>{if(v.route) return v.route}).includes(menu.route.slice(menu.route.lastIndexOf('/')))){
+        menu.open = true;
+      }else{
+        menu.open = false;
+      }
+      if(menu.children){
+        this.setMenuOpen(menu.children, breadcrumbMenu);
+      }
+    }else if(objectUtil.isArray(menu)){
+      menu.forEach(v=>{
+        this.setMenuOpen(v, breadcrumbMenu);
+      })
+    }
+    return menu;
   }
 
 }
