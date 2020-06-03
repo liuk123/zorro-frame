@@ -26,6 +26,11 @@
           "route": "/demo/step",
           "title": "步骤",
           "type": "router"
+        },
+        {
+          "route": "/demo/canvas",
+          "title": "canvas",
+          "type": "router"
         }
       ]
     },{

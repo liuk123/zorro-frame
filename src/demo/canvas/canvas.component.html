@@ -1,0 +1,6 @@
+<canvas id="canvas" [width]="width" [height]="height"></canvas>
+<ul class="colors">
+    <li *ngFor="let item of colors" class="block" [ngStyle]="{'background-color': item}">
+        {{item}}
+    </li>
+</ul>

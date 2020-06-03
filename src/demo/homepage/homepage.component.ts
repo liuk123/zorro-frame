@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
     private modal: NzModalService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   createBasicMessage(): void {
     this.messageUtil.success();
   }
