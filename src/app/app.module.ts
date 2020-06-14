@@ -57,9 +57,11 @@ const I18NSERVICE_PROVIDES = [{ provide: "I18N_TOKEN", useClass: I18NService, mu
 
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { StartupService, DefaultInterceptor } from './core';
+import { CacheInterceptor } from './core/net/cache.interceptor';
 
 const INTERCEPTOR_PROVIDES = [
   { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
 ];
 // #endregion
 

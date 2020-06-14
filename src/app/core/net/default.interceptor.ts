@@ -28,6 +28,7 @@ const CODEMESSAGE = {
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。',
 };
+const MAX_RETRY_NUM = 3;
 
 @Injectable()
 export class DefaultInterceptor implements HttpInterceptor {
@@ -35,12 +36,23 @@ export class DefaultInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return next.handle(req).pipe(
+    const resetReq = req.clone({setHeaders:{'auther':'123'}})
+
+    let count = 0;
+
+    return next.handle(resetReq).pipe(
       mergeMap((event: any) => {
         return of(event);
       }),
-      catchError((err: HttpErrorResponse) => {
-        return of(err);
+      catchError((err: HttpErrorResponse, err$) => {
+        count++;
+        console.log(CODEMESSAGE[err.status]);
+        if(err.status === 400 && count < MAX_RETRY_NUM){
+          return err$;
+        }else{
+          return of(err);
+        }
+        // err$其代表上游的Observable对象，当直接返回这个对象时，会启动catchError的重试机制。
       })
     );
   }

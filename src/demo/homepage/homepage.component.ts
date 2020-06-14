@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/cor
 import { MessageUtilService } from 'prime-zorro'
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { DialogComponent } from '../dialog/dialog.component';
+import { UserService } from 'src/app/biz/services/user.service';
 
 @Component({
   selector: 'app-homepage',
@@ -16,12 +17,20 @@ export class HomepageComponent implements OnInit {
   constructor(
     @Inject('CONFIG') private config,
     private messageUtil: MessageUtilService,
+    private userSrv: UserService,
     private modal: NzModalService
   ) { }
 
   ngOnInit() { }
+
   createBasicMessage(): void {
     this.messageUtil.success();
+  }
+
+  getUserInfo(){
+    this.userSrv.getUserInfo().subscribe(v=>{
+      console.log(v)
+    })
   }
 
   createComponentModal(){
