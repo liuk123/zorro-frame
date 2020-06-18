@@ -58,6 +58,8 @@ const I18NSERVICE_PROVIDES = [{ provide: "I18N_TOKEN", useClass: I18NService, mu
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { StartupService, DefaultInterceptor } from './core';
 import { CacheInterceptor } from './core/net/cache.interceptor';
+import { RouteReuseStrategy } from '@angular/router';
+import { AppReuseStrategy } from './routes/route-reuse';
 
 const INTERCEPTOR_PROVIDES = [
   { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
@@ -99,7 +101,9 @@ const APPINIT_PROVIDES = [
     ...INTERCEPTOR_PROVIDES,
     ...APPINIT_PROVIDES,
     ...I18NSERVICE_PROVIDES,
-    { provide:'CONFIG', useValue: commonConfig }
+    { provide:'CONFIG', useValue: commonConfig },
+
+    { provide: RouteReuseStrategy, useClass:  AppReuseStrategy},
   ],
   bootstrap: [AppComponent]
 })

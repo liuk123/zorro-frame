@@ -6,6 +6,7 @@ import { DemoListComponent } from './demo-list/demo-list.component';
 import { StepComponent } from './step/step.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { CssComponent } from './css/css.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full'},
@@ -18,6 +19,9 @@ const routes: Routes = [
     },{
         path:'demo-list',
         component: DemoListComponent,
+        data:{
+            keep:true,
+        }
     },{
         path:'step',
         component: StepComponent,
@@ -27,11 +31,14 @@ const routes: Routes = [
     },{
         path:'canvas',
         component: CanvasComponent,
+    },{
+        path:'css',
+        component: CssComponent,
     }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
 export class DemoRoutingModule {}
