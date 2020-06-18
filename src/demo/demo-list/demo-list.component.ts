@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ProjModel } from "../../app/biz/model/proj.model"
+import { FormBase } from '../../app/core/model/form-base';
 @Component({
   selector: 'app-demo-list',
   templateUrl: './demo-list.component.html',
@@ -8,43 +9,51 @@ import { ProjModel } from "../../app/biz/model/proj.model"
 })
 export class DemoListComponent implements OnInit {
 
-  validateForm!: FormGroup;
-  isCollapse = true;
-  ProjModel = ProjModel;
+
+  questions:FormBase<any>[] = [
+    {
+      key: 'projName',
+      label: '项目名称',
+      value: null,
+      valide:[],
+      controlType: 'textbox',
+      type: 'text',
+    },
+    {
+      key: 'timeRange',
+      label: '项目日期',
+      value: null,
+      valide:[],
+      controlType: 'rangePicker',
+    },
+    {
+      key: 'projType',
+      label: '项目类型',
+      value: null,
+      valide:[],
+      controlType: 'dropdown',
+      options: [
+        {key: 'solid',  value: 'Solid'},
+        {key: 'great',  value: 'Great'},
+        {key: 'good',   value: 'Good'},
+        {key: 'unproven', value: 'Unproven'}
+      ]
+    },
+    {
+      key: 'timeRang122e',
+      label: '项目日期',
+      value: null,
+      valide:[],
+      controlType: 'rangePicker',
+    },
+  ]
   
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    this.validateForm = this.fb.group({
-      projName: [null],
-      projCode: [null],
-      amount:[null],
-      projTime: [null],
-      projType: [ProjModel.projTypeDefaultValue],
-    });
+  ngOnInit(): void {}
+
+  submitEmit(value): void {
+    console.log(value)
   }
-
-  submitForm(): void {
-    for (const i in this.validateForm.controls) {
-      this.validateForm.controls[i].markAsDirty();
-      this.validateForm.controls[i].updateValueAndValidity();
-    }
-    console.log(this.validateForm.value)
-  }
-
-  toggleCollapse(): void {
-    this.isCollapse = !this.isCollapse;
-  }
-
-  resetForm(): void {
-    this.validateForm.reset();
-  }
-
-}
-
-let data = {
-  label: "项目编号",
-  value: "projCode",
-  type: "string",
 }

@@ -8,17 +8,24 @@ import { StepComponent } from './step/step.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import { CssComponent } from './css/css.component';
-import { RouteReuseStrategy } from '@angular/router';
-import { AppReuseStrategy } from 'src/app/routes/route-reuse';
+import { FormGroupComponent } from './demo-list/form-group/form-group.component';
+import { FormItemComponent } from './demo-list/form-item/form-item.component';
 
 @NgModule({
-  declarations: [HomepageComponent, UploadComponent, DemoListComponent, StepComponent, DialogComponent, CanvasComponent, CssComponent],
+  declarations: [
+    HomepageComponent,
+    UploadComponent,
+    DemoListComponent,
+    StepComponent,
+    DialogComponent,
+    CanvasComponent,
+    CssComponent,
+    FormGroupComponent,
+    FormItemComponent,
+  ],
   imports: [
     SharedModule,
     DemoRoutingModule,
-  ],
-  providers:[
-    // { provide: RouteReuseStrategy, useClass:  AppReuseStrategy},
   ]
 })
 export class DemoModule { }
