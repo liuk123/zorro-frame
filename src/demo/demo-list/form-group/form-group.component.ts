@@ -25,8 +25,8 @@ export class FormGroupComponent implements OnInit {
   submitForm(): void {
     this.validateForm.markAllAsTouched();
     this.validateForm.updateValueAndValidity();
-    console.log(this.validateForm.value)
-    this.submitEmit.emit();
+    // console.log(this.validateForm.value)
+    this.submitEmit.emit(this.validateForm.value);
   }
 
   resetForm(): void {
