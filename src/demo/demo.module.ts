@@ -10,6 +10,7 @@ import { CanvasComponent } from './canvas/canvas.component';
 import { CssComponent } from './css/css.component';
 import { FormGroupComponent } from './demo-list/form-group/form-group.component';
 import { FormItemComponent } from './demo-list/form-item/form-item.component';
+import { DropDragComponent } from './drop-drag/drop-drag.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormItemComponent } from './demo-list/form-item/form-item.component';
     CssComponent,
     FormGroupComponent,
     FormItemComponent,
+    DropDragComponent,
   ],
   imports: [
     SharedModule,

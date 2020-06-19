@@ -1,0 +1,16 @@
+<div class="block block1"
+    app-droppable
+    [dropTags]="['div']"
+    [dragEnterClass]="'drag-enter'"
+    (dropped)="handleMove($event,data1)"
+>
+{{data1}}
+</div>
+<div class="block block2"
+    [app-draggable]="true"
+    [dragTag]="'div'"
+    [draggedClass]="'drag-start'"
+    [dragData]="data2"
+>
+{{data2}}
+</div>

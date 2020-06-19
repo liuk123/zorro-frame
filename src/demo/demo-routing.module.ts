@@ -7,6 +7,7 @@ import { StepComponent } from './step/step.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import { CssComponent } from './css/css.component';
+import { DropDragComponent } from './drop-drag/drop-drag.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full'},
@@ -34,6 +35,9 @@ const routes: Routes = [
     },{
         path:'css',
         component: CssComponent,
+    },{
+        path:'drop-drag',
+        component: DropDragComponent,
     }
 ];
 

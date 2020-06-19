@@ -36,6 +36,11 @@
           "route": "/demo/css",
           "title": "css",
           "type": "router"
+        },
+        {
+          "route": "/demo/drop-drag",
+          "title": "drop-drag",
+          "type": "router"
         }
       ]
     },{

@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
+import { DragDirective } from './directive/drop-drag/drag.directive';
+import { DropDirective } from './directive/drop-drag/drop.directive';
+import { DragDropService } from './directive/drop-drag/drag-drop.service';
 
 //module
 const THIRD_MODULES = [
@@ -15,7 +18,8 @@ const COMPONENTS = [
 ]
 //directive
 const DIRECTIVES = [
-
+  DragDirective,
+  DropDirective
 ];
 //pipes
 const PIPES = [
@@ -23,7 +27,7 @@ const PIPES = [
 ];
 //service
 const SERVICE = [
-  
+  DragDropService
 ]
 
 @NgModule({
