@@ -38,13 +38,14 @@ export class DropDirective {
     if (this.el.nativeElement === ev.target) {
       console.log('dragover');
       this.drag$.subscribe(dragData => {
-        if (this.dropTags.indexOf(dragData.tag) > -1) {
-          this.rd.setProperty(ev, 'dataTransfer.effectAllowed', 'all');
-          this.rd.setProperty(ev, 'dataTransfer.dropEffect', 'move');
-        } else {
-          this.rd.setProperty(ev, 'dataTransfer.effectAllowed', 'none');
-          this.rd.setProperty(ev, 'dataTransfer.dropEffect', 'none');
-        }
+        //设置dom元素属性
+        // if (this.dropTags.indexOf(dragData.tag) > -1) {
+        //   this.rd.setProperty(ev, 'dataTransfer.effectAllowed', 'all');
+        //   this.rd.setProperty(ev, 'dataTransfer.dropEffect', 'move');
+        // } else {
+        //   this.rd.setProperty(ev, 'dataTransfer.effectAllowed', 'none');
+        //   this.rd.setProperty(ev, 'dataTransfer.dropEffect', 'none');
+        // }
       });
     }
   }
