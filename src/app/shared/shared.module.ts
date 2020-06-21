@@ -7,6 +7,9 @@ import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 import { DragDirective } from './directive/drop-drag/drag.directive';
 import { DropDirective } from './directive/drop-drag/drop.directive';
 import { DragDropService } from './directive/drop-drag/drag-drop.service';
+import { InputNoSpaceDirective } from './directive/input/input-nospace.directive';
+import { InputRequiredDirective } from './directive/input/input-require.directive';
+import { InputTrimDirective } from './directive/input/input-trim.directive';
 
 //module
 const THIRD_MODULES = [
@@ -19,7 +22,11 @@ const COMPONENTS = [
 //directive
 const DIRECTIVES = [
   DragDirective,
-  DropDirective
+  DropDirective,
+
+  InputNoSpaceDirective,
+  InputRequiredDirective,
+  InputTrimDirective,
 ];
 //pipes
 const PIPES = [
