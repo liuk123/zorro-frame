@@ -4,7 +4,7 @@
     <ng-container [ngSwitch]="question?.controlType">
 
         <nz-form-control *ngSwitchCase="'textbox'">
-            <input nz-input placeholder="placeholder" [formControlName]="question.key" [id]="question.key"
+            <input nz-input placeholder="placeholder" [formControlName]="question.key" [id]="question.key" [title]="question.label"
                 [type]="question.type" />
         </nz-form-control>
 
