@@ -17,7 +17,7 @@ export class InputTrimDirective {
     }
     
     trim(str) {
-      return str.replace(/(^\s*|\s*?)/g,"");
+      return str.replace(/(^\s*|\s*$)/g,"");
     }
 
 }

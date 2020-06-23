@@ -5,7 +5,7 @@
 
         <nz-form-control *ngSwitchCase="'textbox'">
             <input nz-input placeholder="placeholder" [formControlName]="question.key" [id]="question.key"
-                [type]="question.type" />
+                [type]="question.type" input-noSpace input-required/>
         </nz-form-control>
 
         <nz-form-control *ngSwitchCase="'dropdown'">
