@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '@angular/forms';
 import { ProjModel } from "../../app/biz/model/proj.model"
 import { FormBase } from '../../app/core/model/form-base';
 @Component({
@@ -15,7 +15,7 @@ export class DemoListComponent implements OnInit {
       key: 'projName',
       label: '项目名称',
       value: null,
-      valide:[],
+      valide:[Validators.required],
       controlType: 'textbox',
       type: 'text',
     },
@@ -48,6 +48,9 @@ export class DemoListComponent implements OnInit {
     },
   ]
   
+  form= this.fb.group({
+    username: [null, [this.requiredValidate]],
+  })
 
   constructor(private fb: FormBuilder) { }
 
@@ -55,5 +58,19 @@ export class DemoListComponent implements OnInit {
 
   submitEmit(value): void {
     console.log(value)
+  }
+  submit(){
+    console.log(this.form.value)
+    console.log(this.form.valid)
+  }
+
+  requiredValidate(control: AbstractControl) {
+    control.setValidators((c: FormControl) => {
+        if (control.value && control.value.toString().trim() !== '') {
+          return null;
+        } else {
+          return {required: {info: '必填项'}};
+        }
+      })
   }
 }
