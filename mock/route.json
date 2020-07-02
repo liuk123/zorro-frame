@@ -1,6 +1,6 @@
 {
-  "/data/*": "/$1",
+  "/api/*": "/$1",
   "/:resource/:id/show": "/:resource/:id",
-  "/data1/:name": "/data1?name=:name",
-  "/:anyArray\\?id=:id": "/:anyArray/:id"
+  "/posts/:author": "/posts?author=:author",
+  "/articles\\?id=:id": "/posts/:id"
 }
